@@ -50,13 +50,14 @@ let BILL = 0;
 function updateBil(e) {
   BILL = e.target.value;
   let matches = BILL.match(/\./g);
-  if (matches != null && matches.length == 2) {
+  if (matches != null && matches.length >= 2 ) {
     bill.classList.add("redBorder");
   } else {
     bill.classList.remove("redBorder");
+    BILL = parseFloat(BILL);
+    SetAnswer();
   }
-  BILL = parseFloat(BILL);
-  SetAnswer();
+ 
 }
 
 numberOfPerson.addEventListener("input", updatePerson);
