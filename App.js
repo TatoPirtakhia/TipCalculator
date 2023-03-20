@@ -36,8 +36,7 @@ let customtip;
 function update(e) {
   customtip = parseFloat(e.target.value);
   x = customtip
-  if(customtip <=100 || customtip!=0){
-    console.log(customtip)
+  if(customtip <=100 && customtip!=0){
     customTip.classList.remove("redBorder");
     SetAnswer();
   }else {
@@ -75,7 +74,7 @@ function updatePerson(e) {
 }
 
 function SetAnswer() {
-  if ((BILL != 0) && (x != 0) && (person != 0)) {
+  if ((BILL != 0) && (x != 0) && (person != 0) ) {
     let value = ((BILL / 100) * x) / person;
     tip.textContent = `$${value.toFixed(2)}`;
     value = BILL / person + value;
