@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  /* min-height: 100vh; */
+  background-color: #c5e4e7;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+main {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.svg{
+    margin-bottom: 40px;
+}
+.main_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  width: 100%;
+  padding-top: 32px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 32px;
+  border-radius: 25px 25px 0px 0px;
+}
+.container {
+  width: 327px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.bill {
+  margin-bottom: 32px;
+  position: relative;
+}
+.bill p {
+  margin-bottom: 7px;
+}
+.bill_input {
+  width: 311px;
+  height: 48px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f3f9fa;
+  text-align: end;
+  padding-right: 18px;
+  font-size: 24px;
+  outline: none;
+  color: #00474b;
+}
+.bill_input::placeholder {
+  color: #00474b;
+}
+.dolar_logo {
+  position: absolute;
+  top: 55%;
+  left: 17px;
+}
+.tip_container {
+  margin-bottom: 32px;
+}
+.tip_conainer_p {
+  margin-bottom: 16px;
+}
+
+.tip {
+  width: 146px;
+  height: 48px;
+  background-color: #00474b;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 24px;
+}
+.select_tip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 311px;
+  margin-bottom: 32px;
+}
+.custom::placeholder {
+  color: #547878;
+}
+.custom {
+  text-align: right;
+  padding-right: 17px;
+  outline: none;
+  color: #00474b !important;
+  background-color: #f3f9fa !important;
+  border: none;
+}
+.people {
+  position: relative;
+}
+.person_logo {
+  position: absolute;
+  top: 60%;
+  left: 17px;
+}
+.person_input {
+  width: 311px;
+  height: 48px;
+  padding-right: 17px;
+  background-color: #f3f9fa;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  text-align: right;
+  font-size: 24px;
+  color: #00474b;
+}
+.person_input::placeholder {
+  color: #00474b;
+}
+.check_people {
+  width: 311px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 6px;
+}
+.ifPersonZero {
+  display: none;
+  color: #e17457;
+}
+.warning {
+  border: 2px solid #e17052;
+}
+
+.title {
+  font-size: 16px;
+  color: #5e7a7d;
+}
+
+.container_right {
+  width: 327px;
+  padding-top: 37px;
+  padding-left: 24px;
+  padding-right: 22px;
+  background-color: #00474b;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+  padding-bottom: 24px;
+}
+
+.footer_card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 21px;
+}
+.cards_design p:nth-child(1) {
+  font-size: 16px;
+  color: #ffffff;
+}
+.cards_design p:nth-child(2) {
+  color: #7f9d9f;
+  font-size: 13px;
+}
+.answer {
+  font-size: 32px;
+  color: #26c2ae;
+}
+button {
+  color: #00474b;
+  font-size: 20px;
+  width: 281px;
+  height: 48px;
+  background-color: #26c2ae;
+  border-radius: 5px;
+  border: none;
+}
+
+
+
+.changeTipColor{
+    background-color: #26C2AE;
+    color: #00474B;
+}
+.redBorder{
+    border: 2px solid #E17052;
+}
+
+@media (min-width: 1440px) {
+    main{
+        margin-top: 160px;
+    }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .svg{
+    margin-bottom: 90px;
+  }
+  .main_container {
+    background-color: #ffffff;
+    width: 920px;
+    padding: 32px 32px 32px 48px;
+    /* padding-top: 32px;
+    padding-left: 48px;
+    padding-right: 32px;
+    padding-bottom: 32px; */
+    border-radius: 25px;
+  }
+  .tip_container {
+    margin-bottom: 0px;
+  }
+  .container {
+    width: 840px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .bill {
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .bill p {
+    margin-bottom: 7px;
+  }
+  .bill_input {
+    width: 380px;
+  }
+  .dolar_logo {
+    top: 58%;
+  }
+
+  .tip {
+    width: 117px;
+  }
+  .select_tip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    width: 380px;
+    margin-bottom: 40px;
+  }
+
+  .person_input {
+    width: 380px;
+  }
+  .person_input::placeholder {
+    color: #00474b;
+  }
+  .check_people {
+    width: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .container_right {
+    width: 413px;
+    padding: 40px;
+  }
+
+  .footer_card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  .cards_design p:nth-child(1) {
+    font-size: 16px;
+    color: #ffffff;
+  }
+  .cards_design p:nth-child(2) {
+    color: #7f9d9f;
+    font-size: 13px;
+  }
+  .answer {
+    font-size: 48px;
+    color: #26c2ae;
+  }
+  .reset {
+    background-color: #0d686d;
+    margin-top: 100px;
+    width: 333px;
+  }
+
+  .reset:hover {
+    cursor: pointer;
+    background-color: #9fe8df;
+  }
+
+  .bill_input:hover {
+    cursor: pointer;
+    border: 2px solid #26c2ae;
+  }
+  .custom:hover {
+    cursor: pointer;
+    border: 2px solid #26c2ae;
+  }
+  .tip:hover {
+    cursor: pointer;
+    background-color: #9fe8df;
+    color: #00474b;
+  }
+  .custom:hover {
+    background-color: #f3f9fa;
+  }
+  .person_input:hover {
+    border: 2px solid #26c2ae;
+  }
+}
