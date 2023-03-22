@@ -27,42 +27,63 @@ function click(e) {
     buttons.forEach((button) => button.classList.remove("changeTipColor"));
     target.classList.add("changeTipColor");
     x = parseFloat(target.value);
-    if (!target.classList.contains("custom"))SetAnswer();
+    if (!target.classList.contains("custom")) SetAnswer();
   }
 }
 
 customTip.addEventListener("input", update);
 let customtip;
 function update(e) {
-  customtip = parseFloat(e.target.value);
-  x = customtip
-  if(customtip <=100 && customtip!=0){
-    customTip.classList.remove("redBorder");
-    SetAnswer();
-  }else {
-    customTip.classList.add("redBorder");
+  customtip = e.target.value;
+  x = customtip;
+  x = parseFloat(x);
+  let sizeTip = customtip.length;
+  let firstalament;
+  if (x <= 100 && sizeTip >=1) {
+    firstalament = customtip.charAt(0);
+    if (firstalament === '0') {
+      customTip.classList.add("redBorder");
+    } else {
+      customTip.classList.remove("redBorder");
+      SetAnswer();
+    }
+  } else {
+    if (sizeTip > 1) {
+      customTip.classList.add("redBorder");
+    } else {
+      if (customTip.classList.contains("redBorder")){
+        customTip.classList.remove("redBorder");
+      }
+    }
   }
 }
 
 bill.addEventListener("input", updateBil);
-let BILL = 0;
+let BILL;
 function updateBil(e) {
   BILL = e.target.value;
+  let bilString = BILL;
   let matches = BILL.match(/\./g);
-  if (matches != null && matches.length >= 2 ) {
+  if (matches != null && matches.length >= 2) {
     bill.classList.add("redBorder");
   } else {
-    bill.classList.remove("redBorder");
-    BILL = parseFloat(BILL);
-    SetAnswer();
+    if (BILL == ".") {
+      bill.classList.add("redBorder");
+    } else {
+      bill.classList.remove("redBorder");
+      BILL = parseFloat(BILL);
+      SetAnswer();
+    }
   }
- 
 }
 
 numberOfPerson.addEventListener("input", updatePerson);
 let person = 0;
+let size = 0;
 function updatePerson(e) {
-  person = parseFloat(e.target.value);
+  let personString = e.target.value;
+  size = personString.length;
+  person = parseFloat(personString);
   if (person == 0) {
     numberOfPerson.classList.add("redBorder");
     checkPerson.style.display = "block";
@@ -74,15 +95,23 @@ function updatePerson(e) {
 }
 
 function SetAnswer() {
-  if ((BILL != 0) && (x != 0) && (person != 0) ) {
-    let value = ((BILL / 100) * x) / person;
-    tip.textContent = `$${value.toFixed(2)}`;
-    value = BILL / person + value;
-    total.textContent = `$${value.toFixed(2)}`;
+  if(!customTip.classList.contains("redBorder") && !numberOfPerson.classList.contains("redBorder") && !bill.classList.contains("redBorder")){
+  if (BILL != 0 && x <= 100 && person != 0 && size != 0) {
+    let value;
+    if (x == 0) {
+      value = BILL / person;
+      total.textContent = `$${value.toFixed(2)}`;
+    } else {
+      value = ((BILL / 100) * x) / person;
+      tip.textContent = `$${value.toFixed(2)}`;
+      value = BILL / person + value;
+      total.textContent = `$${value.toFixed(2)}`;
+    }
   }
 }
+}
 
-const reset = document.querySelector('.reset')
-reset.addEventListener('click', () =>{
-    window.location.reload(); 
-})
+const reset = document.querySelector(".reset");
+reset.addEventListener("click", () => {
+  window.location.reload();
+});
